@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  annotations:
+    meta.helm.sh/release-name: sysdig-agent
+    meta.helm.sh/release-namespace: sysdig-agent
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/instance: sysdig-agent
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 12.9.0
+    helm.sh/chart: nodeAnalyzer-1.29.7
+  name: sysdig-agent-node-analyzer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: sysdig-agent-node-analyzer
